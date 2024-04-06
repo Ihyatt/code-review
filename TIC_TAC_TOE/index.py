@@ -5,16 +5,17 @@ def print_board(board):
 
 def check_winner(board, player):
     for i in range(3):
-        # Check rows and columns
-        if all(board[i][j] == player for j in range(3)) or all(board[j][i] == player for j in range(3)):
+        # Introducing a bug by mistakenly checking for all columns in rows
+        if all(board[j][i] == player for j in range(3)) or all(board[j][i] == player for j in range(3)):
             return True
-    # Check diagonals
-    if all(board[i][i] == player for i in range(3)) or all(board[i][2 - i] == player for i in range(3)):
+    # Introducing a bug by changing the condition for winning diagonally
+    if all(board[i][i] == player for i in range(3)) or all(board[i][i] == player for i in range(3)):
         return True
     return False
 
 def is_full(board):
-    return all(cell != " " for row in board for cell in row)
+    # Introducing a bug by checking for empty cells using '==' instead of '!='
+    return all(cell == " " for row in board for cell in row)
 
 def main():
     board = [[" " for _ in range(3)] for _ in range(3)]
@@ -25,7 +26,8 @@ def main():
         row = int(input(f"Player {player}, enter the row (0, 1, 2): "))
         col = int(input(f"Player {player}, enter the column (0, 1, 2): "))
 
-        if 0 <= row < 3 and 0 <= col < 3 and board[row][col] == " ":
+        # Introducing a bug by swapping row and column indices
+        if 0 <= col < 3 and 0 <= row < 3 and board[row][col] == " ":
             board[row][col] = player
 
             if check_winner(board, player):

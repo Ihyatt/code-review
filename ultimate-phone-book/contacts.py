@@ -102,9 +102,9 @@ while loopvar < 1:
                 if array[fname][i].upper() == rmcontact.upper():
                     tempvar += 1
                     rmvar = i
-            # if no cotacts found
+            # if no contacts found
             if tempvar == 0:
-                print("no cantact matches first name provided")
+                print("no contact matches first name provided")
             # if only one contact is found
             elif tempvar == 1:
                 print("DO YOU WANT TO DELETE CONTACT")
@@ -119,10 +119,8 @@ while loopvar < 1:
                     print("failed to REMOVE contact")
             # if more than one contact is found
             else:
-                print("there are more than one contact with same name")
+                print("there are more than one contact with the same name")
                 # TODO
-
-
 
     # if option 4 is selected
     elif a == 4:
@@ -141,7 +139,7 @@ while loopvar < 1:
                         # add one for changing values
                         sortcounter += 1
                     if array[fname][i].upper() == array[fname][i + 1].upper():
-                        # if first name are same, compare last
+                        # if first names are the same, compare last
                         if array[lname][i].upper() > array[lname][i + 1].upper():
                             for j in range(4):
                                 temp = array[j][i]
@@ -160,13 +158,12 @@ while loopvar < 1:
             # change prompt settings
             if promptvar == 0: 
                 promptvar += 1
-                print("you won't get prompt now!")
-                print("ENTER 9 AGAIN TO START GETTING PROMPT AGAIN!!")
+                print("you won't get the prompt now!")
+                print("ENTER 9 AGAIN TO START GETTING THE PROMPT AGAIN!!")
             else:
                 promptvar -= 1
         else:
             print("NEED CORRECT KEY TO ENABLE THIS FEATURE")
-
 
     # if option 0 is selected
     elif a == 0:
@@ -174,13 +171,9 @@ while loopvar < 1:
         outfile = open('data/pickle-main', 'wb')
         pickle.dump(array, outfile)
         outfile.close()
-        print("YOUR DATA HAS BEEN SAVED SUCESSFULLY!")
+        print("YOUR DATA HAS BEEN SAVED SUCCESSFULLY!")
         loopvar += 1
 
     # if no true option is selected
     else:
-        print("!! PLEASE ENTER VALUE FROM GIVEN INTEGER")
-
-# end of code
-print("")
-print("get this code at https://github.com/JymPatel/Python-FirstEdition")
+        print("!! PLEASE ENTER

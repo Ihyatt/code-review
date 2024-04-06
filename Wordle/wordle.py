@@ -1,26 +1,4 @@
 # Get all 5 letter words from the full English dictionary
-"""
-# dictionary by http://www.gwicks.net/dictionaries.htm
-# Load full English dictionary
-dictionary = open("Dictionary.txt", 'r')
-# Load new empty dictionary
-new_dictionary = open("5 letter word dictionary.txt", "w")
-
-# Read the full English dictionary
-dictionary_content = dictionary.read()
-# Split the full dictionary on every new line
-dictionary_content = dictionary_content.split("\n") # This returns a list of all the words in the dictionary
-
-# Loop over all the words in the full dictionary
-for i in dictionary_content:
-    # Check if the current word is 5 characters long
-    if len(i) == 5:
-        # Write word to the new dictionary
-        new_dictionary.write(f"{i}\n")
-
-# Close out of the new dictionary
-new_dictionary.close()
-"""
 
 # import the library random
 import random
