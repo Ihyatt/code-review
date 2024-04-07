@@ -1,23 +1,15 @@
-# code by @JymPatel
-# edited by @bupboi1337, (editors can put their name here && thanks for contribution :)
 
-# this code uses GPL V3 LICENSE
-## check license it https://github.com/JymPatel/Python-FirstEdition/blob/Main/LICENSE
 print("this code uses GPL V3 LICENSE")
 print("")
 
-# start of code
-# import library
+
 import pickle
 import os
 
-# get array from pickle data
 infile = open('data/pickle-main', 'rb')
-# defining array
 array = pickle.load(infile)
 infile.close()
 
-# get key if path exists
 keyacess = False
 path = 'data/pickle-key'
 if os.path.isfile('data/pickle-key'):
@@ -39,17 +31,13 @@ else:
 print("")
 print("update-22.02 ADDS SAVING YOUR DATA WHEN CLOSED BY SAVING USING OPTION 0\n##")
 
-# for ease in reading
 fname = 0
 lname = 1
 number = 2
 email = 3
-# getting some variables
 promptvar = 0 # variable for prompt
 loopvar = 0 # variable for main loop
-# making loop to run
 while loopvar < 1:
-    # ask user what to do
     print("")  # putting blank line before running new loop
     if promptvar == 0:
         print("0.  exit program")
@@ -61,7 +49,6 @@ while loopvar < 1:
 
     a = input("WHAT WOULD YOU LIKE TO DO?  ")
 
-    # check for integer & calculate length of array
     try:
         a = int(a)
     except ValueError:
@@ -81,16 +68,13 @@ while loopvar < 1:
             i1 += 1
         print("=======================")
 
-    # option 2 is selected
     elif a == 2:
-        # get a new contact
         array[fname].append(input("First Name: "))
         array[lname].append(input("Last Name: "))
         array[number].append(input("Phone Number: "))
         array[email].append(input("email ID: "))
         arraylen += 1
 
-    # option 3
     elif a == 3:
         print("which contact would you like to delete? (enter first name)")
         print("enter '\nSTOP' to STOP deleting contact")
@@ -152,10 +136,8 @@ while loopvar < 1:
         else:
             print("NEED CORRECT KEY TO ENABLE THIS FEATURE")
 
-    # option 9
     elif a == 9:
         if keyacess:
-            # change prompt settings
             if promptvar == 0: 
                 promptvar += 1
                 print("you won't get the prompt now!")
@@ -165,7 +147,6 @@ while loopvar < 1:
         else:
             print("NEED CORRECT KEY TO ENABLE THIS FEATURE")
 
-    # if option 0 is selected
     elif a == 0:
         print("Saving your Data ...")
         outfile = open('data/pickle-main', 'wb')
@@ -174,6 +155,5 @@ while loopvar < 1:
         print("YOUR DATA HAS BEEN SAVED SUCCESSFULLY!")
         loopvar += 1
 
-    # if no true option is selected
     else:
-        print("!! PLEASE ENTER
+        print("!! PLEASE ENTER")
